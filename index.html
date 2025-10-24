@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Of AI</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --solid-black: #000000;
+        --primary-black: #020024;
+        --primary-darkblue: #102782;
+        --nav-bar-background: rgba(255, 255, 255, 0.1);
+        /* Light mode navbar */
+        --white: #fff;
+        --primary-lightblue: #2B2DD8;
+        --red: #ff0000;
+        --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        /* Light mode background */
+        --text-color: #000000;
+        /* Light mode text */
+        --accent-color: #2B2DD8;
+        /* Light mode accent */
+        --btn-bg: #ffffff;
+
+        --btn-border: #d1d5db;
+
+        --logo-color: #000000;
+
+        --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+    body {
+        font-family: "Manrope";
+        min-height: 100vh;
+        background: var(--bg-color);
+        color: var(--text-color);
+
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-size: 100%;
+    }
+
+    .navbar {
+        background: var(--nav-bar-background);
+        backdrop-filter: blur(0.5rem);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: var(--shadow);
+        position: relative;
+    }
+
+    .navbar h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: var(--logo-color);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-standard);
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: calc(100vh - 5rem);
+        font-family: 'Manrope';
+        gap: 2rem;
+        text-align: center;
+        margin-top: -4rem;
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <h1>FUTURE OF AI</h1>
+        <div class="nav-links">
+            <h2 id="pastai">PAST OF AI</h2>
+            <h2 id="presentai">PRESENT OF AI</h2>
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
