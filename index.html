@@ -20,6 +20,7 @@
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        /* animation: fadeIn 1s ease-in-out ; */
     }
 
     :root {
@@ -140,8 +141,11 @@
         text-align: center;
         gap: 2rem;
         position: relative;
-        border-bottom: 2px solid #0f0f0f8f;
+
+        
     }
+
+    
 
     .future-of-ai {
         min-height: 100vh;
@@ -153,6 +157,7 @@
         text-align: center;
         gap: 2rem;
         position: relative;
+
     }
 
     #future-ai-title {
@@ -160,17 +165,22 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 4.5rem;
-        margin-top: -10rem;
+        margin-top: -30rem;
+        margin-left: -70rem;
+
     }
 
     #future-ai-subtitle {
         font-size: 2rem;
         opacity: 0.9;
         line-height: 1.5;
+        margin-left: -70rem;
+
 
     }
 
     .what-lies-ahead {
+
         animation: appear linear;
         animation-timeline: view();
         animation-range: entry 0% cover 40%;
@@ -194,6 +204,39 @@
         animation-range: entry 0% cover 40%;
     }
 
+    #neuralWave {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120vw;
+        height: 120vh;
+        z-index: -1;
+        opacity: 0.8;
+
+    }
+
+    
+
+    #neural3d {
+        position: relative;
+        width: 450px;
+        height: 450px;
+        pointer-events: none;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        position: absolute;
+        right: -25rem;
+        top: 25%;
+        transform: translateY(-50%);
+    }
+
+    
+    
+
+
+
     @keyframes appear {
         from {
             opacity: 0;
@@ -203,6 +246,16 @@
         to {
             opacity: 1;
             clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
         }
     }
 </style>
@@ -215,16 +268,24 @@
             <h2 id="presentai">PRESENT OF AI</h2>
         </div>
 
+
     </nav>
 
     <div class="container">
         <div class="future-of-ai">
-            <h1 id="future-ai-title">The Future of AI: Shaping Tomorrow</h1>
+            <canvas id="neuralWave"></canvas>
+            <div id="neural3d"></div>
+            <h1 id="future-ai-title">The Future of AI: <br>Shaping Tomorrow</h1>
             <h2 id="future-ai-subtitle">Unveiling a Transformative Vision <br>for the Next Era of Artificial
                 Intelligence
             </h2>
+            
+
+
 
         </div>
+
+        <hr>
 
         <div class="what-lies-ahead">
             <h1 id="ai-content-title">What Lies Ahead</h1>
@@ -289,8 +350,10 @@
         </div>
     </div>
 
+
     <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+
 </body>
 
 </html>
