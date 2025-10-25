@@ -11,6 +11,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+
 </head>
 </head>
 <style>
@@ -55,7 +57,7 @@
     }
 
     html {
-        scroll-behavior: smooth;
+        scroll-snap-type: y proximity;
         font-size: 100%;
     }
 
@@ -67,7 +69,10 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: var(--shadow);
-        position: relative;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
     }
 
     .navbar h1 {
@@ -98,29 +103,55 @@
         font-family: 'Manrope';
         gap: 2rem;
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
-    #future-ai-subtitle{
+    #future-ai-subtitle {
         opacity: 0.8;
     }
-    
+
     #ai-content-paragraph {
         font-weight: 500;
     }
 
- 
-    #quote1, #quote2, #quote3 {
-    width: 50%;
-    height: auto; /* Maintain aspect ratio */
-    margin: 1rem auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
+    #quote1,
+    #quote2,
+    #quote3 {
+        width: 50%;
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 1rem auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        /* Subtle shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .future-of-ai,
+    .what-lies-ahead,
+    .ai-developers,
+    .quotes {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        gap: 2rem;
+        position: relative;
+        border-bottom: 10px solid #c3cfe28f;
+    }
+
+    .future-of-ai{
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        
+    }
 </style>
 
 <body>
@@ -134,26 +165,79 @@
     </nav>
 
     <div class="container">
-        <h1 id="future-ai-title">The Future of AI: Shaping Tomorrow</h1>
-        <h2 id="future-ai-subtitle">Unveiling a Transformative Vision for the Next Era of Artificial Intelligence</h2>
-        <p id="ai-content-paragraph">By 2050, AI will reshape our world, seamlessly blending into daily life. From early rule-based systems to today’s machine learning breakthroughs, the future promises AI with human-like reasoning, ethical decision-making, and creative potential. Imagine AI assistants anticipating needs, smart cities powered by intelligent grids, and medical systems detecting diseases before symptoms. But as Spider-Man reminds us, “With great power comes great responsibility”—we must address bias, privacy, and job displacement to ensure a balanced future.</p>
-        <h1 id="ai-content-title">What Lies Ahead</h1>
-        <p class="ai-content-points">General AI Emergence (2030s): AI systems will approach human-level cognition, solving complex problems across industries like healthcare, where AI could design personalized treatments, or education, tailoring curricula to individual students.</p>
-        <p class="ai-content-points">Human-AI Symbiosis (2040s): Neural interfaces may merge human and machine intelligence, enhancing creativity and decision-making. Developers might code via thought, with AI suggesting optimized algorithms in real-time.</p>
-        <p class="ai-content-points">Creative and Ethical AI: AI will generate art, music, and literature rivaling human work, while ethical frameworks ensure fairness. Expect AI to tackle global challenges like climate change through predictive modeling.</p>
-        <h1 class="future-of-developers">AI and Developers: The Job Question</h2>
-        <h2 class="future-of-developers">AI’s rise sparks fear of job loss, especially for developers. Automation tools like GitHub Copilot already write code snippets, and future AI could design entire applications from natural language prompts. A 2023 study estimated 20-30% of coding tasks could be automated by 2030, potentially displacing routine programming roles.</h2>
+        <div class="future-of-ai">
+            <h1 id="future-ai-title">The Future of AI: Shaping Tomorrow</h1>
+            <h2 id="future-ai-subtitle">Unveiling a Transformative Vision for the Next Era of Artificial Intelligence
+            </h2>
+            <p id="ai-content-paragraph">By 2050, AI will reshape our world, seamlessly blending into daily life. From
+                early rule-based systems to today’s machine learning breakthroughs, the future promises AI with
+                human-like reasoning, ethical decision-making, and creative potential. Imagine AI assistants
+                anticipating needs, smart cities powered by intelligent grids, and medical systems detecting diseases
+                before symptoms. But as Spider-Man reminds us, “With great power comes great responsibility”—we must
+                address bias, privacy, and job displacement to ensure a balanced future.</p>
+        </div>
 
-        <p>
-            However, AI also creates opportunities. Developers skilled in AI integration, system architecture, and ethical oversight will be in demand to build, fine-tune, and secure these systems.
+        <div class="what-lies-ahead">
+            <h1 id="ai-content-title">What Lies Ahead</h1>
+            <p class="ai-content-points">General AI Emergence (2030s): AI systems will approach human-level cognition,
+                solving complex problems across industries like healthcare, where AI could design personalized
+                treatments,
+                or education, tailoring curricula to individual students.</p>
+            <p class="ai-content-points">Human-AI Symbiosis (2040s): Neural interfaces may merge human and machine
+                intelligence, enhancing creativity and decision-making. Developers might code via thought, with AI
+                suggesting optimized algorithms in real-time.</p>
+            <p class="ai-content-points">Creative and Ethical AI: AI will generate art, music, and literature rivaling
+                human
+                work, while ethical frameworks ensure fairness. Expect AI to tackle global challenges like climate
+                change
+                through predictive modeling.</p>
+        </div>
 
-A Bright Future for Skilled Developers
+        <div class="ai-developers">
+            <h1 class="future-of-developers">AI and Developers: The Job Question</h2>
+                <h2 class="future-of-developers">AI’s rise sparks fear of job loss, especially for developers.
+                    Automation
+                    tools like GitHub Copilot already write code snippets, and future AI could design entire
+                    applications
+                    from natural language prompts. A 2023 study estimated 20-30% of coding tasks could be automated by
+                    2030,
+                    potentially displacing routine programming roles.</h2>
 
-The future isn’t about AI replacing developers—it’s about collaboration. Those who master AI tools, stay agile, and innovate will thrive in a world where creativity and problem-solving remain human strengths.
+                <p>
+                    However, AI also creates opportunities. Developers skilled in AI integration, system architecture,
+                    and
+                    ethical oversight will be in demand to build, fine-tune, and secure these systems.
 
-        </p>
+                    A Bright Future for Skilled Developers
 
+                    The future isn’t about AI replacing developers—it’s about collaboration. Those who master AI tools,
+                    stay
+                    agile, and innovate will thrive in a world where creativity and problem-solving remain human
+                    strengths.
+
+                </p>
+
+        </div>
+
+        <div class="quotes">
+            <h1>Various Quotes For AI by Big Personalties</h1>
+            <h2>“AI will take over repetitive coding tasks, leaving developers who focus on rote work vulnerable.”
+                — John Carmack, AI researcher and game developer
+            </h2>
+            <h2>
+                “The future of programming is not writing code, but designing systems that AI can’t yet dream up.”
+                — Andrej Karpathy, AI pioneer
+            </h2>
+
+            <h2>
+                “If you’re a developer who learns to wield AI as a tool, your skills will always find a home.”
+                — Adapted from Satya Nadella, Microsoft CEO
+            </h2>
+        </div>
     </div>
+
+    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script> 
+    <script src="script.js"></script>
 </body>
 
 </html>
