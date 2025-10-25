@@ -79,3 +79,16 @@ function animateNeural() {
   requestAnimationFrame(animateNeural);
 }
 animateNeural();
+
+
+
+const pointsSpans = document.querySelectorAll(".ai-content-points span");
+
+pointsSpans.forEach(span => {
+    span.style.background = "linear-gradient(135deg, #4d9fff, #ffffff)";
+    span.style.webkitBackgroundClip = "text";
+    span.style.webkitTextFillColor = "transparent";
+    
+      
+    span.style.fontSize = "2.3rem";
+});

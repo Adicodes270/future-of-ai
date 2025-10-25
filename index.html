@@ -132,6 +132,7 @@
     .what-lies-ahead,
     .ai-developers,
     .quotes {
+        width: 100%; 
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -141,7 +142,7 @@
         text-align: center;
         gap: 2rem;
         position: relative;
-
+        border-bottom: 5px solid #2c2c2c; 
         
     }
 
@@ -209,8 +210,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 120vw;
-        height: 120vh;
+        max-width: 100%;
+        max-height: 100%;
         z-index: -1;
         opacity: 0.8;
 
@@ -227,14 +228,36 @@
         padding: 0;
         flex-shrink: 0;
         position: absolute;
-        right: -25rem;
+        right: 5rem;
         top: 25%;
         transform: translateY(-50%);
     }
 
     
-    
+    #ai-content-title{
+        font-size: 5rem;
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
+    .ai-content-points {
+        font-size: 1.5rem;
+    }
+
+    #future-title{
+        font-size: 5rem;
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    #developer-skills {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2;
+    }
 
 
     @keyframes appear {
@@ -289,26 +312,26 @@
 
         <div class="what-lies-ahead">
             <h1 id="ai-content-title">What Lies Ahead</h1>
-            <p class="ai-content-points">General AI Emergence (2030s): AI systems will approach human-level cognition,
+            <p class="ai-content-points"><span>General AI Emergence (2030s)</span>:<br> AI systems will approach human-level cognition,
                 solving complex problems across industries like healthcare, where AI could design personalized
                 treatments,
                 or education, tailoring curricula to individual students.</p>
-            <p class="ai-content-points">Human-AI Symbiosis (2040s): Neural interfaces may merge human and machine
+            <p class="ai-content-points"><span>Human-AI Symbiosis (2040s)</span>:<br> Neural interfaces may merge human and machine
                 intelligence, enhancing creativity and decision-making. Developers might code via thought, with AI
                 suggesting optimized algorithms in real-time.</p>
-            <p class="ai-content-points">Creative and Ethical AI: AI will generate art, music, and literature rivaling
+            <p class="ai-content-points"><span>Creative and Ethical AI</span>:<br> AI will generate art, music, and literature rivaling
                 human
                 work, while ethical frameworks ensure fairness. Expect AI to tackle global challenges like climate
                 change
                 through predictive modeling.</p>
 
-            <p class="ai-content-points">The Responsibility Factor: With great power comes great responsibility—we must
+            <p class="ai-content-points"><span>The Responsibility Factor</span>:<br> With great power comes great responsibility—we must
                 address bias, privacy, and job displacement to ensure AI creates a balanced and equitable future for
                 all.</p>
         </div>
 
         <div class="ai-developers">
-            <h1 class="future-of-developers">AI and Developers: The Job Question</h2>
+            <h1 id="future-title" class="future-of-developers">AI and Developers: The Job Question</h2>
                 <h2 class="future-of-developers">AI’s rise sparks fear of job loss, especially for developers.
                     Automation
                     tools like GitHub Copilot already write code snippets, and future AI could design entire
@@ -317,7 +340,7 @@
                     2030,
                     potentially displacing routine programming roles.</h2>
 
-                <p>
+                <p id="developer-skills">
                     However, AI also creates opportunities. Developers skilled in AI integration, system architecture,
                     and
                     ethical oversight will be in demand to build, fine-tune, and secure these systems.
