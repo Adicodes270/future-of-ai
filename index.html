@@ -32,11 +32,11 @@
         --primary-lightblue: #2B2DD8;
         --red: #ff0000;
         --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        --bg-color: linear-gradient(135deg, var(--solid-black), var(--primary-black));
         /* Light mode background */
-        --text-color: #000000;
+        --text-color: #e7e7e7;
         /* Light mode text */
-        --accent-color: #2B2DD8;
+        --accent-color: #0f12dd;
         /* Light mode accent */
         --btn-bg: #ffffff;
 
@@ -51,7 +51,7 @@
     body {
         font-family: "Manrope";
         min-height: 100vh;
-        background: var(--bg-color);
+        background: #0e0d0d;
         color: var(--text-color);
 
     }
@@ -62,24 +62,26 @@
     }
 
     .navbar {
-        background: var(--nav-bar-background);
+        position: fixed;
         backdrop-filter: blur(0.5rem);
         padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: var(--shadow);
-        position: fixed;
+
         width: 100%;
         top: 0;
         z-index: 1000;
     }
 
     .navbar h1 {
-        font-size: 2rem;
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.5rem;
         font-weight: bold;
         letter-spacing: 2px;
-        color: var(--logo-color);
+
     }
 
     .nav-links {
@@ -89,7 +91,7 @@
     }
 
     .nav-links h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition-standard);
@@ -106,13 +108,9 @@
         margin-top: 5rem;
     }
 
-    #future-ai-subtitle {
-        opacity: 0.8;
-    }
 
-    #ai-content-paragraph {
-        font-weight: 500;
-    }
+
+
 
 
     #quote1,
@@ -142,15 +140,70 @@
         text-align: center;
         gap: 2rem;
         position: relative;
-        border-bottom: 10px solid #c3cfe28f;
+        border-bottom: 2px solid #0f0f0f8f;
     }
 
-    .future-of-ai{
+    .future-of-ai {
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        position: relative;
         justify-content: center;
-        
+        padding: 2rem;
+        text-align: center;
+        gap: 2rem;
+        position: relative;
+    }
+
+    #future-ai-title {
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 4.5rem;
+        margin-top: -10rem;
+    }
+
+    #future-ai-subtitle {
+        font-size: 2rem;
+        opacity: 0.9;
+        line-height: 1.5;
+
+    }
+
+    .what-lies-ahead {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+
+    #ai-content-title {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+
+    .ai-developers {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+
+    .quotes {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            clip-path: inset(100% 100% 0 0);
+        }
+
+        to {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+        }
     }
 </style>
 
@@ -167,14 +220,10 @@
     <div class="container">
         <div class="future-of-ai">
             <h1 id="future-ai-title">The Future of AI: Shaping Tomorrow</h1>
-            <h2 id="future-ai-subtitle">Unveiling a Transformative Vision for the Next Era of Artificial Intelligence
+            <h2 id="future-ai-subtitle">Unveiling a Transformative Vision <br>for the Next Era of Artificial
+                Intelligence
             </h2>
-            <p id="ai-content-paragraph">By 2050, AI will reshape our world, seamlessly blending into daily life. From
-                early rule-based systems to today’s machine learning breakthroughs, the future promises AI with
-                human-like reasoning, ethical decision-making, and creative potential. Imagine AI assistants
-                anticipating needs, smart cities powered by intelligent grids, and medical systems detecting diseases
-                before symptoms. But as Spider-Man reminds us, “With great power comes great responsibility”—we must
-                address bias, privacy, and job displacement to ensure a balanced future.</p>
+
         </div>
 
         <div class="what-lies-ahead">
@@ -191,6 +240,10 @@
                 work, while ethical frameworks ensure fairness. Expect AI to tackle global challenges like climate
                 change
                 through predictive modeling.</p>
+
+            <p class="ai-content-points">The Responsibility Factor: With great power comes great responsibility—we must
+                address bias, privacy, and job displacement to ensure AI creates a balanced and equitable future for
+                all.</p>
         </div>
 
         <div class="ai-developers">
@@ -236,7 +289,7 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
 
