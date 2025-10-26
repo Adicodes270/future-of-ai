@@ -92,3 +92,10 @@ pointsSpans.forEach(span => {
       
     span.style.fontSize = "2.3rem";
 });
+
+
+const pointsSpans1 = document.querySelectorAll(".quotes span");
+
+pointsSpans1.forEach(span => {
+    span.style.fontSize = "2.3rem";
+});
