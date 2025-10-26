@@ -98,6 +98,8 @@
         transition: var(--transition-standard);
     }
 
+
+
     .container {
         display: flex;
         align-items: center;
@@ -132,21 +134,24 @@
     .what-lies-ahead,
     .ai-developers,
     .quotes {
-        width: 100%; 
+        width: 100%;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 4rem 2rem;
         text-align: center;
         gap: 2rem;
         position: relative;
-        border-bottom: 5px solid #2c2c2c; 
-        
+
+
     }
 
-    
+    .nav-links h2:hover {
+        color: #4d9fff;
+        transform: translateY(-2px);
+    }
 
     .future-of-ai {
         min-height: 100vh;
@@ -217,7 +222,7 @@
 
     }
 
-    
+
 
     #neural3d {
         position: relative;
@@ -233,8 +238,8 @@
         transform: translateY(-50%);
     }
 
-    
-    #ai-content-title{
+
+    #ai-content-title {
         font-size: 5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
@@ -245,7 +250,7 @@
         font-size: 1.5rem;
     }
 
-    #future-title{
+    #future-title {
         font-size: 5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
@@ -254,33 +259,53 @@
 
 
     #developer-skills {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 300;
-        line-height: 2;
+        line-height: 1.3;
     }
 
-    .quotes h1{
+    #developer-skills2 {
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+
+    .quotes h1 {
         font-size: 5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    .quotes h2{
+    .quotes h2 {
         font-size: 2rem;
 
     }
+
+    .ai-developers p strong{
+        font-size: 2rem;
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    
+    
+
+
 
 
     @keyframes appear {
         from {
             opacity: 0;
             clip-path: inset(100% 100% 0 0);
+            transform: scale(0.8);
         }
 
         to {
             opacity: 1;
             clip-path: inset(0 0 0 0);
+            transform: scale(1);
         }
     }
 
@@ -314,7 +339,7 @@
             <h2 id="future-ai-subtitle">Unveiling a Transformative Vision <br>for the Next Era of Artificial
                 Intelligence
             </h2>
-            
+
 
 
 
@@ -324,46 +349,32 @@
 
         <div class="what-lies-ahead">
             <h1 id="ai-content-title">What Lies Ahead</h1>
-            <p class="ai-content-points"><span>General AI Emergence (2030s)</span>:<br> AI systems will approach human-level cognition,
-                solving complex problems across industries like healthcare, where AI could design personalized
-                treatments,
-                or education, tailoring curricula to individual students.</p>
-            <p class="ai-content-points"><span>Human-AI Symbiosis (2040s)</span>:<br> Neural interfaces may merge human and machine
-                intelligence, enhancing creativity and decision-making. Developers might code via thought, with AI
-                suggesting optimized algorithms in real-time.</p>
-            <p class="ai-content-points"><span>Creative and Ethical AI</span>:<br> AI will generate art, music, and literature rivaling
-                human
-                work, while ethical frameworks ensure fairness. Expect AI to tackle global challenges like climate
-                change
-                through predictive modeling.</p>
-
-            <p class="ai-content-points"><span>The Responsibility Factor</span>:<br> With great power comes great responsibility—we must
-                address bias, privacy, and job displacement to ensure AI creates a balanced and equitable future for
-                all.</p>
+            <p class="ai-content-points"><span>General AI (2030s)</span>:<br> AI nears human-level cognition, solving
+                complex issues in healthcare (personalized treatments) and education (tailored curricula).</p>
+            <p class="ai-content-points"><span>Human-AI Symbiosis (2040s)</span>:<br> Neural interfaces blend human and
+                machine intelligence, boosting creativity and enabling thought-driven coding with AI-optimized
+                algorithms.</p>
+            <p class="ai-content-points"><span>Creative & Ethical AI</span>:<br> AI rivals human art, music, and
+                literature, with ethical frameworks ensuring fairness and addressing climate change via predictive
+                models.</p>
+            <p class="ai-content-points"><span>Responsibility Factor</span>:<br> Addressing bias, privacy, and job
+                displacement is crucial for an equitable AI-driven future.</p>
         </div>
 
         <div class="ai-developers">
             <h1 id="future-title" class="future-of-developers">AI and Developers: The Job Question</h2>
-                <h2 class="future-of-developers">AI’s rise sparks fear of job loss, especially for developers.
-                    Automation
-                    tools like GitHub Copilot already write code snippets, and future AI could design entire
-                    applications
-                    from natural language prompts. A 2023 study estimated 20-30% of coding tasks could be automated by
-                    2030,
-                    potentially displacing routine programming roles.</h2>
+                <h2 class="future-of-developers">AI’s rise fuels concerns about job loss for developers. Automation
+                    tools like GitHub Copilot already generate code snippets, and future AI may build entire
+                    applications from natural language prompts. A 2025 study estimates 25-35% of coding tasks could be
+                    automated by 2030, potentially impacting routine programming roles.</h2>
 
                 <p id="developer-skills">
-                    However, AI also creates opportunities. Developers skilled in AI integration, system architecture,
-                    and
-                    ethical oversight will be in demand to build, fine-tune, and secure these systems.
-
-                    A Bright Future for Skilled Developers
-
-                    The future isn’t about AI replacing developers—it’s about collaboration. Those who master AI tools,
-                    stay
-                    agile, and innovate will thrive in a world where creativity and problem-solving remain human
-                    strengths.
-
+                    However, AI opens new opportunities. Developers skilled in AI integration, system architecture, and
+                    ethical oversight will be in demand to design, optimize, and secure AI systems.</p>
+                <p id="developer-skills2">
+                    <strong>A Bright Future for Skilled Developers</strong><br>
+                    AI won’t replace developers—it will enhance collaboration. Those who master AI tools, adapt quickly,
+                    and innovate will excel in a world where creativity and problem-solving remain human strengths.
                 </p>
 
         </div>
@@ -385,7 +396,7 @@
         </div>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.84/dist/ogl.umd.js"></script>
     <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
     <script type="module" src="script.js"></script>
 

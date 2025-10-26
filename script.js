@@ -81,6 +81,16 @@ function animateNeural() {
 animateNeural();
 
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+        } else {
+            animateNeural();
+        }
+    });
+}, { threshold: 0.1 });
+
+observer.observe(container);
 
 const pointsSpans = document.querySelectorAll(".ai-content-points span");
 
@@ -98,4 +108,44 @@ const pointsSpans1 = document.querySelectorAll(".quotes span");
 
 pointsSpans1.forEach(span => {
     span.style.fontSize = "2.3rem";
+});
+
+
+
+
+const quoteElements = document.querySelectorAll('.quotes h2,.quotes h1');
+quoteElements.forEach(quote => {
+    quote.style.transition = 'transform 0.4s ease, color 0.4s ease';
+    quote.addEventListener('mouseenter', () => {
+        quote.style.transform = 'scale(1.05)';
+    });
+    quote.addEventListener('mouseleave', () => {
+        quote.style.transform = 'scale(1)';
+    });
+});
+
+const WhatlaElements = document.querySelectorAll('.what-lies-ahead p, .what-lies-ahead h1');
+WhatlaElements.forEach(p => {
+    p.style.transition = 'transform 0.4s ease, color 0.4s ease';
+    p.addEventListener('mouseenter', () => {
+        p.style.transform = 'scale(1.05)';
+    });
+    p.addEventListener('mouseleave', () => {
+        p.style.transform = 'scale(1)';
+    });
+});
+
+
+
+const aiDevelopersElements = document.querySelectorAll('.ai-developers h1, .ai-developers h2, .ai-developers p');
+aiDevelopersElements.forEach(element => {
+  element.style.transition = 'transform 0.4s ease, color 0.4s ease';
+  element.addEventListener('mouseenter', () => {
+    element.style.transform = 'scale(1.05)';
+    element.style.color = '#4d9fff'; 
+  });
+  element.addEventListener('mouseleave', () => {
+    element.style.transform = 'scale(1)';
+    element.style.color = ''; 
+  });
 });
