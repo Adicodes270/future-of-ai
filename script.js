@@ -81,16 +81,7 @@ function animateNeural() {
 animateNeural();
 
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-        } else {
-            animateNeural();
-        }
-    });
-}, { threshold: 0.1 });
 
-observer.observe(container);
 
 const pointsSpans = document.querySelectorAll(".ai-content-points span");
 
@@ -104,16 +95,11 @@ pointsSpans.forEach(span => {
 });
 
 
-const pointsSpans1 = document.querySelectorAll(".quotes span");
-
-pointsSpans1.forEach(span => {
-    span.style.fontSize = "2.3rem";
-});
 
 
 
 
-const quoteElements = document.querySelectorAll('.quotes h2,.quotes h1');
+const quoteElements = document.querySelectorAll('.quotes h1, .quotes h2, .quotes span')
 quoteElements.forEach(quote => {
     quote.style.transition = 'transform 0.4s ease, color 0.4s ease';
     quote.addEventListener('mouseenter', () => {
@@ -124,7 +110,7 @@ quoteElements.forEach(quote => {
     });
 });
 
-const WhatlaElements = document.querySelectorAll('.what-lies-ahead p, .what-lies-ahead h1');
+const WhatlaElements = document.querySelectorAll('.what-lies-ahead #ai-content-title');
 WhatlaElements.forEach(p => {
     p.style.transition = 'transform 0.4s ease, color 0.4s ease';
     p.addEventListener('mouseenter', () => {
@@ -149,3 +135,43 @@ aiDevelopersElements.forEach(element => {
     element.style.color = ''; 
   });
 });
+
+
+const quotes = document.querySelectorAll('.quote');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+let currentQuote = 0;
+
+function showQuote(index) {
+    quotes.forEach(q => q.classList.remove('active'));
+    quotes[index].classList.add('active');
+}
+
+prevBtn.addEventListener('click', () => {
+    currentQuote = (currentQuote - 1 + quotes.length) % quotes.length;
+    showQuote(currentQuote);
+});
+
+nextBtn.addEventListener('click', () => {
+    currentQuote = (currentQuote + 1) % quotes.length;
+    showQuote(currentQuote);
+});
+
+
+
+
+document.querySelectorAll('.card1, .card2, .card3, .card4').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = y / rect.height * 50; 
+        const rotateY = -x / rect.width * 50;
+        card.style.transform = `perspective(500px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+       card.style.transform = 'perspective(500px) scale(1) rotateX(0deg) rotateY(0deg)'
+    });
+});
+

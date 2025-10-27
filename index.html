@@ -186,10 +186,10 @@
     }
 
     .what-lies-ahead {
-
         animation: appear linear;
         animation-timeline: view();
         animation-range: entry 0% cover 40%;
+
     }
 
     #ai-content-title {
@@ -219,6 +219,7 @@
         max-height: 100%;
         z-index: -1;
         opacity: 0.8;
+        animation: fadeIn 1.5s ease-in;
 
     }
 
@@ -236,11 +237,12 @@
         right: 5rem;
         top: 25%;
         transform: translateY(-50%);
+        animation: fadeIn 1.5s ease-in;
     }
 
 
     #ai-content-title {
-        font-size: 5rem;
+        font-size: 4.5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -251,7 +253,7 @@
     }
 
     #future-title {
-        font-size: 5rem;
+        font-size: 4.5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -271,7 +273,7 @@
     }
 
     .quotes h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -282,16 +284,140 @@
 
     }
 
-    .ai-developers p strong{
+    .ai-developers p strong {
         font-size: 2rem;
         background: linear-gradient(135deg, #4d9fff, #ffffff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
-    
-    
+    .quote-carousel {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
+    .quote {
+        display: none;
+
+        padding: 2rem;
+        transition: opacity 0.4s ease;
+    }
+
+    .quote.active {
+        display: block;
+
+    }
+
+    .author-bio {
+        opacity: 0;
+        font-size: 1.2rem;
+
+        color: var(--text-color);
+
+        margin-top: 1.5rem;
+
+        line-height: 1.4;
+        transition: opacity 0.4s ease;
+    }
+
+    .quote.active:hover .author-bio {
+        opacity: 1;
+
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background: rgb(31, 31, 156);
+        border: 1px solid var(--btn-border);
+        color: var(--text-color);
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: var(--transition-standard);
+    }
+
+    .carousel-btn.prev {
+        left: -3rem;
+
+    }
+
+    .carousel-btn.next {
+        right: -3rem;
+
+    }
+
+    .carousel-btn:hover {
+        background: var(--primary-lightblue);
+        color: var(--white);
+    }
+
+    .cards1,
+    .cards2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1rem 0;
+    }
+
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(77, 159, 255, 0.3);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        width: 30rem;
+        height: 15rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+    }
+
+    .card1 h1,
+    .card2 h1,
+    .card3 h1,
+    .card4 h1 {
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #4d9fff, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0.5rem;
+    }
+
+    .card1 h2,
+    .card2 h2,
+    .card3 h2,
+    .card4 h2 {
+        font-size: 1.2rem;
+        color: #e7e7e7;
+        transition: color 0.3s ease;
+    }
+
+    .card1:hover,
+    .card2:hover,
+    .card3:hover,
+    .card4:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(77, 159, 255, 0.5);
+        border-color: #4d9fff;
+    }
+
+    .card1:hover h2,
+    .card2:hover h2,
+    .card3:hover h2,
+    .card4:hover h2 {
+        color: #4d9fff;
+    }
 
 
 
@@ -318,14 +444,35 @@
             opacity: 1;
         }
     }
+
+    @media (max-width: 90rem) {
+
+    }
+
+    @media (max-width: 64rem) {
+
+    }
+
+    @media (max-width: 48rem) {
+
+    }
+
+    @media (max-width: 25rem) {
+
+    }
+
+    @media (max-width: 20rem) {
+
+    }
+
 </style>
 
 <body>
     <nav class="navbar">
         <h1>FUTURE OF AI</h1>
         <div class="nav-links">
-            <h2 id="pastai">PAST OF AI</h2>
-            <h2 id="presentai">PRESENT OF AI</h2>
+            <!-- <h2 id="pastai">PAST OF AI</h2>
+            <h2 id="presentai">PRESENT OF AI</h2> -->
         </div>
 
 
@@ -346,24 +493,44 @@
         </div>
 
         <hr>
-
+        <!-- Make this card -->
         <div class="what-lies-ahead">
             <h1 id="ai-content-title">What Lies Ahead</h1>
-            <p class="ai-content-points"><span>General AI (2030s)</span>:<br> AI nears human-level cognition, solving
-                complex issues in healthcare (personalized treatments) and education (tailored curricula).</p>
-            <p class="ai-content-points"><span>Human-AI Symbiosis (2040s)</span>:<br> Neural interfaces blend human and
-                machine intelligence, boosting creativity and enabling thought-driven coding with AI-optimized
-                algorithms.</p>
-            <p class="ai-content-points"><span>Creative & Ethical AI</span>:<br> AI rivals human art, music, and
-                literature, with ethical frameworks ensuring fairness and addressing climate change via predictive
-                models.</p>
-            <p class="ai-content-points"><span>Responsibility Factor</span>:<br> Addressing bias, privacy, and job
-                displacement is crucial for an equitable AI-driven future.</p>
-        </div>
+            <div class="cards1">
+                <div class="card1">
+                    <h1>GENERAL AI(2030s)</h1>
+                    <h2> AI nears human-level cognition, solving
+                        complex issues in healthcare (personalized treatments) and education (tailored curricula)</h2>
+                </div><br>
+                <div class="card2">
+                    <h1>Human-AI Symbiosis (2040s)</h1>
+                    <h2>Neural interfaces blend human and
+                        machine intelligence, boosting creativity and enabling thought-driven coding with AI-optimized
+                        algorithms</h2>
+                </div><br>
 
+
+            </div>
+            <div class="cards2">
+                <div class="card3">
+                    <h1>Creative & Ethical AI</h1>
+                    <h2>AI rivals human art, music, and
+                        literature, with ethical frameworks ensuring fairness and addressing climate change via
+                        predictive
+                        models</h2>
+                </div><br>
+                <div class="card4">
+                    <h1>Responsibility Factor</h1>
+                    <h2> Addressing bias, privacy, and job
+                        displacement is crucial for an equitable AI-driven future</h2>
+                </div><br>
+            </div>
+
+        </div>
+        <!-- Add progressive bar here -->
         <div class="ai-developers">
             <h1 id="future-title" class="future-of-developers">AI and Developers: The Job Question</h2>
-                <h2 class="future-of-developers">AI’s rise fuels concerns about job loss for developers. Automation
+                <h2 class="future-of-developers">AI’s rise fuels concerns about job loss for developers.<br> Automation
                     tools like GitHub Copilot already generate code snippets, and future AI may build entire
                     applications from natural language prompts. A 2025 study estimates 25-35% of coding tasks could be
                     automated by 2030, potentially impacting routine programming roles.</h2>
@@ -374,32 +541,66 @@
                 <p id="developer-skills2">
                     <strong>A Bright Future for Skilled Developers</strong><br>
                     AI won’t replace developers—it will enhance collaboration. Those who master AI tools, adapt quickly,
-                    and innovate will excel in a world where creativity and problem-solving remain human strengths.
+                    and innovate will excel in a world where creativity and <br>problem-solving remain human strengths.
                 </p>
 
         </div>
 
+
         <div class="quotes">
-            <h1>Various Quotes For AI by Big Personalties</h1>
-            <h2>“AI will take over repetitive coding tasks, leaving developers who focus on rote work vulnerable.”<br>
-                <span>— John Carmack, AI researcher and game developer</span>
-            </h2>
-            <h2>
-                “The future of programming is not writing code, but designing systems that AI can’t yet dream up.”<br>
-                <span>— Andrej Karpathy, AI pioneer</span>
-            </h2>
+            <h1>AI Quotes</h1>
+            <div class="quote-carousel">
+                <div class="quote active">
+                    <h2>“AI will take over repetitive coding tasks.”<br><span>— John Carmack</span></h2>
+                    <p class="author-bio">John Carmack is a legendary programmer and game developer, co-founder of id
+                        Software (creators of Doom and Quake), and now a pioneer in AGI at Keen Technologies, where he
+                        advances AI for robotics and human-like reasoning.</p>
+                </div>
+                <div class="quote">
+                    <h2>“The future is designing systems AI can’t dream up.”<br><span>— Andrej Karpathy</span></h2>
+                    <p class="author-bio">Andrej Karpathy is a Slovak-Canadian AI expert, co-founder of OpenAI, and
+                        former Tesla AI director, renowned for his work in deep learning and computer vision, plus
+                        educating millions through Stanford courses and YouTube on neural networks.</p>
+                </div>
+                <div class="quote">
+                    <h2>“Developers who wield AI will thrive.”<br><span>— Satya Nadella</span></h2>
+                    <p class="author-bio">Satya Nadella is Microsoft's CEO since 2014, transforming the company into an
+                        AI powerhouse through massive investments in OpenAI and tools like GitHub Copilot, while
+                        championing cloud computing and ethical AI innovation.</p>
+                </div>
+                <div class="quote">
+                    <h2>“AI is not just a tool; it’s a partner in redefining human potential.” <br><span>— Fei-Fei
+                            Li</span></h2>
+                    <p class="author-bio">Fei-Fei Li, the 'Godmother of AI,' is a Stanford professor and co-director of
+                        its Human-Centered AI Institute, best known for creating ImageNet—the dataset that
+                        revolutionized computer vision and sparked the deep learning boom.</p>
+                </div>
+                <div class="quote">
+                    <h2>“The true power of AI lies in amplifying human creativity, not replacing it.” <br><span>— Demis
+                            Hassabis</span></h2>
+                    <p class="author-bio">Demis Hassabis is CEO and co-founder of Google DeepMind, a chess prodigy
+                        turned AI pioneer, who led breakthroughs like AlphaGo (mastering Go) and AlphaFold (solving
+                        protein folding), earning the 2024 Nobel Prize in Chemistry for AI-driven science.</p>
+                </div>
+                <div class="quote">
+                    <h2>“Ethics in AI is not an afterthought—it’s the foundation of trust.” <br><span>— Kate
+                            Crawford</span></h2>
+                    <p class="author-bio">Kate Crawford is a principal researcher at Microsoft Research and co-founder
+                        of AI Now Institute, a leading voice on AI's social impacts, authoring 'Atlas of AI' to expose
+                        its hidden costs in power, labor, and the environment.</p>
+                </div>
 
-            <h2>
-                “If you’re a developer who learns to wield AI as a tool, your skills will always find a home.”<br>
-                <span>— Adapted from Satya Nadella, Microsoft CEO</span>
-            </h2>
+                <button class="carousel-btn prev">◄</button>
+                <button class="carousel-btn next">►</button>
+            </div>
         </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.84/dist/ogl.umd.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
-    <script type="module" src="script.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.84/dist/ogl.umd.js"></script>
+        <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+        <script type="module" src="script.js"></script>
+        <footer
+            style="text-align: center; padding: 3rem 2rem; opacity: 0.7; border-top: 1px solid rgba(77, 159, 255, 0.3);">
+            <p>© 2025 Future of AI | Created with curiosity</p>
+        </footer>
 </body>
 
 </html>
