@@ -444,26 +444,227 @@
             opacity: 1;
         }
     }
+/* Tablets & Small Laptops (1440px and below) */
+@media (max-width: 90rem) {
+    #neural3d {
+        width: 350px;
+        height: 350px;
+        right: 2rem;
+    }
+    
+    #future-ai-title {
+        font-size: 3.5rem;
+    }
+    
+    #future-ai-subtitle {
+        font-size: 1.5rem;
+    }
+}
 
-    @media (max-width: 90rem) {
+/* Tablets (1024px and below) */
+@media (max-width: 64rem) {
+    .navbar h1 {
+        font-size: 1.2rem;
+    }
+    
 
+    
+    #future-ai-title {
+        font-size: 3rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #future-ai-subtitle {
+        font-size: 1.3rem;
+        margin-left: 0;
+    }
+    
+    #ai-content-title, #future-title, .quotes h1 {
+        font-size: 3rem;
+    }
+    
+    .cards1, .cards2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card1, .card2, .card3, .card4 {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .carousel-btn.prev {
+        left: -2rem;
+    }
+    
+    .carousel-btn.next {
+        right: -2rem;
+    }
+}
+
+/* Mobile (768px and below) */
+/* Mobile (768px and below) */
+@media (max-width: 48rem) {
+    html {
+        font-size: 90%;
+    }
+    
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .navbar h1 {
+        font-size: 1rem;
+    }
+    
+    #future-ai-title {
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #future-ai-subtitle {
+        font-size: 1.1rem;
+        margin-left: 0;
+    }
+    
+    #ai-content-title, #future-title, .quotes h1 {
+        font-size: 2.5rem;
+    }
+    
+    .quotes h2 {
+        font-size: 1.5rem;
+    }
+    
+    .author-bio {
+        font-size: 1rem;
+    }
+    
+    .card1 h1, .card2 h1, .card3 h1, .card4 h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card1 h2, .card2 h2, .card3 h2, .card4 h2 {
+        font-size: 1rem;
+    }
+    
+    .carousel-btn {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .carousel-btn.prev {
+        left: 0.5rem;
+    }
+    
+    .carousel-btn.next {
+        right: 0.5rem;
+    }
+    
+    .quote-carousel {
+        width: 85%;
+        padding: 0 3rem;
     }
 
-    @media (max-width: 64rem) {
+    #neural3d {
+        display: none;
+    }
+}
 
+/* Small Mobile (400px and below) */
+@media (max-width: 25rem) {
+    #future-ai-title {
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #future-ai-subtitle {
+        font-size: 0.85rem;
+        margin-left: 0;
+    }
+    
+    #ai-content-title, #future-title, .quotes h1 {
+        font-size: 1.8rem;
+    }
+    
+    .quotes h2 {
+        font-size: 1.1rem;
+    }
+    
+    .card1, .card2, .card3, .card4 {
+        width: 95%;
+        height: auto;
+        min-height: 12rem;
+    }
+    
+    .carousel-btn.prev {
+        left: 0.2rem;
+    }
+    
+    .carousel-btn.next {
+        right: 0.2rem;
+    }
+    
+    .quote-carousel {
+        width: 90%;
+        padding: 0 2.5rem;
     }
 
-    @media (max-width: 48rem) {
+    #neural3d {
+        display: none;
+    }
+}
 
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 20rem) {
+    .navbar h1 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    #future-ai-title {
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-left: 0;
     }
 
-    @media (max-width: 25rem) {
-
+    #future-ai-subtitle {
+        font-size: 0.75rem;
+        margin-left: 0;
+    }
+    
+    #ai-content-title, #future-title, .quotes h1 {
+        font-size: 1.5rem;
+    }
+    
+    .quotes h2 {
+        font-size: 0.95rem;
     }
 
-    @media (max-width: 20rem) {
-
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
     }
+
+    .carousel-btn.prev {
+        left: 0.1rem;
+    }
+    
+    .carousel-btn.next {
+        right: 0.1rem;
+    }
+
+    .quote-carousel {
+        width: 92%;
+        padding: 0 2rem;
+    }
+
+    #neural3d {
+        display: none;
+    }
+}
 
 </style>
 
@@ -600,6 +801,8 @@
         <footer
             style="text-align: center; padding: 3rem 2rem; opacity: 0.7; border-top: 1px solid rgba(77, 159, 255, 0.3);">
             <p>© 2025 Future of AI | Created with curiosity</p>
+            <br>
+            <p>View from desktop for the best experience</p>
         </footer>
 </body>
 
